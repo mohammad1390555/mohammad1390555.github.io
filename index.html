@@ -290,8 +290,18 @@ a{color:inherit;text-decoration:none}
 .proj:hover .proj-thumb{filter:grayscale(0)}
 .proj-thumb .blueprint{position:absolute;inset:0;opacity:.13;
   background-image:linear-gradient(#2d3436 1px,transparent 1px),linear-gradient(90deg,#2d3436 1px,transparent 1px);background-size:26px 26px}
-.proj-glyph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:10px;
-  font-family:'JetBrains Mono',monospace;font-size:.82rem;font-weight:700;letter-spacing:.06em;color:rgba(45,52,54,.72)}
+{/* Image-based thumbs */}
+.proj-thumb img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.proj-glyph {
+  position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 10px;
+  font-family: 'JetBrains Mono', monospace; font-size: .82rem; font-weight: 700; letter-spacing: .06em; color: rgba(45,52,54,.72);
+  background: linear-gradient(145deg, rgba(224,229,236,.95), rgba(208,215,228,.95));
+  transition: opacity .4s var(--mech);
+}
+.proj:hover .proj-glyph { opacity: 0; }
+
 @media(max-width:639px){.proj-glyph{font-size:.72rem;padding:6px}}
 .t1{background:linear-gradient(140deg,#ffd9dd,#ff8a94 45%,#c0394a)}
 .t2{background:linear-gradient(140deg,#dbe7ff,#8fb6ff 45%,#3f6fbf)}
@@ -512,9 +522,8 @@ footer{padding:44px 0 34px}
       <div class="rv">
         <div class="frame screws">
           <span class="hole"></span>
-          <div class="frame-art">
+          <div class="frame-art" style="background-image:url('images/profile.jpg');background-size:cover;background-position:center">
             <span class="blueprint"></span>
-            <span class="avatar">PANDA<br>BANGER</span>
           </div>
           <div class="gh-card">
             <div class="gh-top">
@@ -673,7 +682,7 @@ footer{padding:44px 0 34px}
     <div class="work-grid" id="grid">
 
       <article class="proj rv" data-cat="vpn">
-        <div class="proj-thumb t1"><span class="blueprint"></span><span class="proj-glyph">panahannet-panel</span></div>
+        <div class="proj-thumb t1"><img src="images/vpn-panel.jpg" alt="panahannet-panel" loading="lazy"><span class="proj-glyph">panahannet-panel</span></div>
         <div class="proj-meta">
           <span class="tag">Workers · D1 · Telegram bot · ⭐1</span>
           <h3 class="card-title" style="margin-top:12px">پنل کامل کسب‌وکار پناه‌نت</h3>
@@ -685,7 +694,7 @@ footer{padding:44px 0 34px}
       </article>
 
       <article class="proj rv" data-cat="vpn" data-rv-delay="60">
-        <div class="proj-thumb t2"><span class="blueprint"></span><span class="proj-glyph">vpn-panel-pro</span></div>
+        <div class="proj-thumb t1"><img src="images/server.jpg" alt="vpn-panel-pro" loading="lazy"><span class="proj-glyph">vpn-panel-pro</span></div>
         <div class="proj-meta">
           <span class="tag">JavaScript · Workers · D1</span>
           <h3 class="card-title" style="margin-top:12px">VPN Panel Pro</h3>
@@ -697,7 +706,7 @@ footer{padding:44px 0 34px}
       </article>
 
       <article class="proj rv" data-cat="vpn" data-rv-delay="120">
-        <div class="proj-thumb t3"><span class="blueprint"></span><span class="proj-glyph">nahan gateway</span></div>
+        <div class="proj-thumb t1"><img src="images/server.jpg" alt="nahan gateway" loading="lazy"><span class="proj-glyph">nahan gateway</span></div>
         <div class="proj-meta">
           <span class="tag">Workers · Privacy · Fork</span>
           <h3 class="card-title" style="margin-top:12px">گیت‌وی «نَهان»</h3>
@@ -721,7 +730,7 @@ footer{padding:44px 0 34px}
       </article>
 
       <article class="proj rv" data-cat="android" data-rv-delay="60">
-        <div class="proj-thumb t4"><span class="blueprint"></span><span class="proj-glyph">jaru-android · جارو</span></div>
+        <div class="proj-thumb t1"><img src="images/android-app.jpg" alt="jaru-android · جارو" loading="lazy"><span class="proj-glyph">jaru-android · جارو</span></div>
         <div class="proj-meta">
           <span class="tag">Kotlin · Material 3 · MIT</span>
           <h3 class="card-title" style="margin-top:12px">جارو — جاروب‌کن کانفیگ وپن</h3>
@@ -733,7 +742,7 @@ footer{padding:44px 0 34px}
       </article>
 
       <article class="proj rv" data-cat="android" data-rv-delay="120">
-        <div class="proj-thumb t5"><span class="blueprint"></span><span class="proj-glyph">panah-android · پناه</span></div>
+        <div class="proj-thumb t1"><img src="images/android-app.jpg" alt="panah-android · پناه" loading="lazy"><span class="proj-glyph">panah-android · پناه</span></div>
         <div class="proj-meta">
           <span class="tag">Kotlin · v2ray client</span>
           <h3 class="card-title" style="margin-top:12px">پناه — کلاینت اشتراک</h3>
@@ -757,7 +766,7 @@ footer{padding:44px 0 34px}
       </article>
 
       <article class="proj rv" data-cat="bot" data-rv-delay="60">
-        <div class="proj-thumb t6"><span class="blueprint"></span><span class="proj-glyph">ai-guardian</span></div>
+        <div class="proj-thumb t1"><img src="images/ai-guardian.jpg" alt="ai-guardian" loading="lazy"><span class="proj-glyph">ai-guardian</span></div>
         <div class="proj-meta">
           <span class="tag">Python · CLI · LLM</span>
           <h3 class="card-title" style="margin-top:12px">AI Guardian</h3>
@@ -769,7 +778,7 @@ footer{padding:44px 0 34px}
       </article>
 
       <article class="proj rv" data-cat="bot">
-        <div class="proj-thumb t2"><span class="blueprint"></span><span class="proj-glyph">Aegis · discord-bot</span></div>
+        <div class="proj-thumb t1"><img src="images/discord-bot.jpg" alt="Aegis · discord-bot" loading="lazy"><span class="proj-glyph">Aegis · discord-bot</span></div>
         <div class="proj-meta">
           <span class="tag">discord.py · cogs</span>
           <h3 class="card-title" style="margin-top:12px">Aegis — بات ماژولار دیسکورد</h3>
@@ -781,7 +790,7 @@ footer{padding:44px 0 34px}
       </article>
 
       <article class="proj rv" data-cat="bot" data-rv-delay="60">
-        <div class="proj-thumb t1"><span class="blueprint"></span><span class="proj-glyph">OmniBot</span></div>
+        <div class="proj-thumb t1"><img src="images/discord-bot.jpg" alt="OmniBot" loading="lazy"><span class="proj-glyph">OmniBot</span></div>
         <div class="proj-meta">
           <span class="tag">Python · multipurpose</span>
           <h3 class="card-title" style="margin-top:12px">OmniBot — همه‌کاره</h3>
@@ -793,7 +802,7 @@ footer{padding:44px 0 34px}
       </article>
 
       <article class="proj rv" data-cat="tools" data-rv-delay="120">
-        <div class="proj-thumb t4"><span class="blueprint"></span><span class="proj-glyph">tool-fontgenerator</span></div>
+        <div class="proj-thumb t1"><img src="images/tool-font.jpg" alt="tool-fontgenerator" loading="lazy"><span class="proj-glyph">tool-fontgenerator</span></div>
         <div class="proj-meta">
           <span class="tag">HTML · RTL · 110+ استایل</span>
           <h3 class="card-title" style="margin-top:12px">فونت‌ساز فارسی و انگلیسی</h3>
@@ -806,7 +815,7 @@ footer{padding:44px 0 34px}
       </article>
 
       <article class="proj rv" data-cat="tools">
-        <div class="proj-thumb t3"><span class="blueprint"></span><span class="proj-glyph">tool-colorpicker</span></div>
+        <div class="proj-thumb t1"><img src="images/tool-font.jpg" alt="tool-colorpicker" loading="lazy"><span class="proj-glyph">tool-colorpicker</span></div>
         <div class="proj-meta">
           <span class="tag">JS · single file · offline</span>
           <h3 class="card-title" style="margin-top:12px">انتخاب‌گر رنگ آنلاین</h3>
@@ -819,7 +828,7 @@ footer{padding:44px 0 34px}
       </article>
 
       <article class="proj rv" data-cat="tools" data-rv-delay="60">
-        <div class="proj-thumb t5"><span class="blueprint"></span><span class="proj-glyph">sfdsgfd · Black Bear</span></div>
+        <div class="proj-thumb t1"><img src="images/ai-guardian.jpg" alt="sfdsgfd · Black Bear" loading="lazy"><span class="proj-glyph">sfdsgfd · Black Bear</span></div>
         <div class="proj-meta">
           <span class="tag">Python · TUI · MIT</span>
           <h3 class="card-title" style="margin-top:12px">Black Bear — مانیتور ترمینالی</h3>
@@ -831,7 +840,7 @@ footer{padding:44px 0 34px}
       </article>
 
       <article class="proj rv" data-cat="infra">
-        <div class="proj-thumb t2"><span class="blueprint"></span><span class="proj-glyph">php-easyteam-panel</span></div>
+        <div class="proj-thumb t1"><img src="images/server.jpg" alt="php-easyteam-panel" loading="lazy"><span class="proj-glyph">php-easyteam-panel</span></div>
         <div class="proj-meta">
           <span class="tag">PHP · SPA · Minecraft</span>
           <h3 class="card-title" style="margin-top:12px">EasyTeam Panel</h3>
@@ -843,7 +852,7 @@ footer{padding:44px 0 34px}
       </article>
 
       <article class="proj rv" data-cat="infra" data-rv-delay="60">
-        <div class="proj-thumb t4"><span class="blueprint"></span><span class="proj-glyph">FeatherPanel</span></div>
+        <div class="proj-thumb t1"><img src="images/server.jpg" alt="FeatherPanel" loading="lazy"><span class="proj-glyph">FeatherPanel</span></div>
         <div class="proj-meta">
           <span class="tag">PHP · Laravel · Fork</span>
           <h3 class="card-title" style="margin-top:12px">FeatherPanel</h3>
@@ -855,7 +864,7 @@ footer{padding:44px 0 34px}
       </article>
 
       <article class="proj rv" data-cat="infra" data-rv-delay="120">
-        <div class="proj-thumb t6"><span class="blueprint"></span><span class="proj-glyph">CraftCommand</span></div>
+        <div class="proj-thumb t1"><img src="images/server.jpg" alt="CraftCommand" loading="lazy"><span class="proj-glyph">CraftCommand</span></div>
         <div class="proj-meta">
           <span class="tag">TypeScript · Minecraft · Fork</span>
           <h3 class="card-title" style="margin-top:12px">CraftCommand</h3>
@@ -867,7 +876,7 @@ footer{padding:44px 0 34px}
       </article>
 
       <article class="proj rv" data-cat="infra">
-        <div class="proj-thumb t1"><span class="blueprint"></span><span class="proj-glyph">LUFFY_PANEL</span></div>
+        <div class="proj-thumb t1"><img src="images/server.jpg" alt="LUFFY_PANEL" loading="lazy"><span class="proj-glyph">LUFFY_PANEL</span></div>
         <div class="proj-meta">
           <span class="tag">Python · Fork · dashboard</span>
           <h3 class="card-title" style="margin-top:12px">LUFFY PANEL</h3>
@@ -879,7 +888,7 @@ footer{padding:44px 0 34px}
       </article>
 
       <article class="proj rv" data-cat="infra" data-rv-delay="60">
-        <div class="proj-thumb t3"><span class="blueprint"></span><span class="proj-glyph">Turbo-Window-RDP</span></div>
+        <div class="proj-thumb t1"><img src="images/server.jpg" alt="Turbo-Window-RDP" loading="lazy"><span class="proj-glyph">Turbo-Window-RDP</span></div>
         <div class="proj-meta">
           <span class="tag">Windows · RDP · Fork</span>
           <h3 class="card-title" style="margin-top:12px">Turbo Window — RDP</h3>
@@ -891,7 +900,7 @@ footer{padding:44px 0 34px}
       </article>
 
       <article class="proj rv" data-cat="vpn" data-rv-delay="120">
-        <div class="proj-thumb t5"><span class="blueprint"></span><span class="proj-glyph">cf-ip-ranges</span></div>
+        <div class="proj-thumb t1"><img src="images/vpn-panel.jpg" alt="cf-ip-ranges" loading="lazy"><span class="proj-glyph">cf-ip-ranges</span></div>
         <div class="proj-meta">
           <span class="tag">Cloudflare · IP ranges · Fork</span>
           <h3 class="card-title" style="margin-top:12px">cf-ip-ranges — آی‌پی‌های کلاودفلر</h3>
