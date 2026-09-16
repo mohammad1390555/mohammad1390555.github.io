@@ -285,8 +285,11 @@ a{color:inherit;text-decoration:none}
   transition:transform .35s var(--spring),box-shadow .3s var(--mech);overflow:hidden}
 .proj:hover{transform:translateY(-6px);box-shadow:var(--float)}
 .proj.is-hidden{display:none}
-.proj-thumb{position:relative;overflow:hidden;border-radius:12px;aspect-ratio:16/11;filter:grayscale(1) contrast(1.05);
-  box-shadow:var(--groove);transition:filter .5s var(--mech);width:100%}
+.proj-thumb{position:relative;overflow:hidden;border-radius:12px;aspect-ratio:16/11;
+  box-shadow:var(--groove);transition:all .5s var(--mech);width:100%;display:block}
+.proj-thumb img{width:100%;height:100%;object-fit:cover;display:block;
+  filter:grayscale(1) contrast(1.05);transition:filter .5s var(--mech)}
+.proj:hover .proj-thumb img{filter:grayscale(0) contrast(1.05)}
 .proj:hover .proj-thumb{filter:grayscale(0)}
 .proj-thumb .blueprint{position:absolute;inset:0;opacity:.13;
   background-image:linear-gradient(#2d3436 1px,transparent 1px),linear-gradient(90deg,#2d3436 1px,transparent 1px);background-size:26px 26px}
@@ -522,7 +525,8 @@ footer{padding:44px 0 34px}
       <div class="rv">
         <div class="frame screws">
           <span class="hole"></span>
-          <div class="frame-art" style="background-image:url('images/profile.jpg');background-size:cover;background-position:center">
+          <div class="frame-art">
+            <img src="images/profile.jpg" alt="Panda Banger" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit">
             <span class="blueprint"></span>
           </div>
           <div class="gh-card">
