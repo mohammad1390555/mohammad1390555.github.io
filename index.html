@@ -7,6 +7,22 @@
   <meta name="description" content="Mohammad — نمونه‌کارهای نرم‌افزاری، ابزارها و راه‌های ارتباطی | Software projects, tools and contact links.">
   <meta property="og:title" content="Mohammad | Portfolio">
   <meta property="og:description" content="پروژه‌ها، ابزارها و راه‌های ارتباط با Mohammad | Projects, tools and ways to connect.">
+  <meta property="og:url" content="https://mohammad1390555.github.io/">
+  <meta property="og:site_name" content="Mohammad Portfolio">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fa_IR">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Mohammad | Software Developer">
+  <meta name="twitter:description" content="۲۳ پروژه‌ی عمومی، ابزارها و راه‌های ارتباط | 23 public projects, tools and contact links.">
+  <link rel="canonical" href="https://mohammad1390555.github.io/">
+  <script type="application/ld+json">{
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Mohammad",
+    "url":"https://mohammad1390555.github.io/",
+    "jobTitle":"Software Developer",
+    "sameAs":["https://github.com/mohammad1390555","https://t.me/mamad3966","https://www.instagram.com/mamad39666/","https://x.com/Mamaad39666"]
+  }</script>
   <title>Mohammad | نمونه‌کارها و پروژه‌ها</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='20' fill='%23123b86'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='32' font-weight='700' fill='white'%3EM%3C/text%3E%3C/svg%3E">
   <style>
@@ -30,9 +46,12 @@
       -webkit-touch-callout: none;
     }
     body, body * { -webkit-user-select: none; user-select: none; }
+    input, textarea, select, [contenteditable="true"] { -webkit-user-select: text; user-select: text; }
     img, svg { -webkit-user-drag: none; user-drag: none; }
     a { color: inherit; }
     a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid #63c9ff; outline-offset: 3px; }
+    .skip-link { position: fixed; z-index: 50; top: -60px; inset-inline-start: 12px; padding: 9px 13px; border-radius: 10px; color: #fff; background: #123b86; text-decoration: none; font-size: 11px; font-weight: 800; transition: top .18s ease; }
+    .skip-link:focus { top: 12px; }
     .page { width: min(1120px, calc(100% - 40px)); margin: 0 auto; padding: 22px 0 30px; }
     .topbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 5px 2px 23px; }
     .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; min-width: 0; }
@@ -91,11 +110,13 @@
     .search { padding: 0 40px 0 13px; }
     [dir="ltr"] .search { padding: 0 13px 0 40px; }
     .search::placeholder { color: #9aa7b9; }
-    .language-filter { flex: 0 0 150px; padding: 0 12px; cursor: pointer; }
+    .language-filter, .sort-filter { flex: 0 0 150px; padding: 0 12px; cursor: pointer; }
     .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 275px), 1fr)); gap: 13px; }
     .project-card { position: relative; display: flex; min-width: 0; flex-direction: column; min-height: 212px; padding: 18px; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: var(--card); box-shadow: 0 8px 25px rgba(24,54,112,.045); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
     .project-card:hover { transform: translateY(-3px); border-color: #c6d9fb; box-shadow: 0 15px 34px rgba(24,54,112,.11); }
     .project-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+    .project-tags { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 6px; }
+    .project-stars { padding: 5px 7px; border: 1px solid #f2e2b7; border-radius: 999px; color: #926614; background: #fff9e9; font-size: 9px; font-weight: 900; direction: ltr; white-space: nowrap; }
     .project-title { margin: 0; color: #173768; font-size: 15px; font-weight: 900; line-height: 1.4; }
     .project-repo { display: block; max-width: 100%; margin-top: 4px; overflow-wrap: anywhere; color: #8794a9; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 9px; direction: ltr; text-align: right; }
     [dir="ltr"] .project-repo { text-align: left; }
@@ -107,6 +128,9 @@
     .project-link.primary { border-color: #245cbd; color: #fff; background: #2869dc; }
     .project-link.primary:hover { border-color: #174ba6; background: #1d56bd; }
     .empty-state { display: none; padding: 28px; border: 1px dashed #cbd8ea; border-radius: 16px; color: var(--muted); background: rgba(255,255,255,.65); text-align: center; font-size: 12px; }
+    .back-top { position: fixed; z-index: 20; inset-inline-start: 18px; bottom: 18px; display: grid; width: 43px; height: 43px; place-items: center; border: 1px solid #c8d9f4; border-radius: 14px; color: #fff; background: #2869dc; box-shadow: 0 9px 24px rgba(22,70,153,.2); text-decoration: none; font-size: 20px; font-weight: 900; opacity: 0; visibility: hidden; transform: translateY(8px); transition: .2s ease; }
+    .back-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-top:hover { background: #174ba6; }
     .contact-card { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 22px; padding: clamp(22px, 4vw, 34px); border: 1px solid #dce7f6; border-radius: 22px; background: linear-gradient(120deg, #fff, #f0f6ff); box-shadow: var(--shadow); }
     .contact-card h2 { margin: 0 0 8px; font-size: 21px; font-weight: 900; }
     .contact-card p { margin: 0; color: var(--muted); font-size: 12px; }
@@ -159,13 +183,14 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#mainContent" data-i18n="skipToContent">رفتن به محتوای اصلی</a>
   <div class="page">
     <header class="topbar">
       <a class="brand" href="#top" aria-label="Mohammad portfolio">
         <span class="brand-mark" aria-hidden="true">M</span>
-        <span><span class="brand-name">Mohammad</span><span class="brand-kicker">SOFTWARE DEVELOPER</span></span>
+        <span><span class="brand-name">Mohammad</span><span class="brand-kicker" data-i18n="brandKicker">توسعه‌دهنده‌ی نرم‌افزار</span></span>
       </a>
-      <nav class="nav" aria-label="Main navigation">
+      <nav class="nav" id="mainNav" aria-label="پیمایش اصلی">
         <a href="#about" data-i18n="navAbout">درباره‌ی من</a>
         <a href="#projects" data-i18n="navProjects">پروژه‌ها</a>
         <a href="#contact" data-i18n="navContact">ارتباط</a>
@@ -173,7 +198,7 @@
       <button class="lang-button" id="languageToggle" type="button" aria-label="Switch language">EN</button>
     </header>
 
-    <main>
+    <main id="mainContent" tabindex="-1">
       <section class="hero" id="top" aria-labelledby="heroTitle">
         <div class="hero-copy">
           <p class="eyebrow" data-i18n="eyebrow">نمونه‌کارها و پروژه‌های من</p>
@@ -183,7 +208,7 @@
             <a class="button button-primary" href="#projects"><span data-i18n="viewProjects">دیدن پروژه‌ها</span><span aria-hidden="true">↙</span></a>
             <a class="button button-ghost" href="https://github.com/mohammad1390555" target="_blank" rel="noopener noreferrer"><span data-i18n="githubProfile">پروفایل GitHub</span><span aria-hidden="true">↗</span></a>
           </div>
-          <div class="stats" aria-label="Portfolio statistics">
+          <div class="stats" id="portfolioStats" aria-label="آمار نمونه‌کارها">
             <div class="stat"><strong>23</strong><span data-i18n="publicProjects">پروژه‌ی عمومی</span></div>
             <div class="stat"><strong>6</strong><span data-i18n="languages">زبان برنامه‌نویسی</span></div>
             <div class="stat"><strong>FA · EN</strong><span data-i18n="siteLanguages">دو زبانه</span></div>
@@ -192,7 +217,7 @@
         <div class="hero-art" aria-hidden="true">
           <div class="orbit"></div><div class="orbit two"></div>
           <div class="monogram"><span>M</span></div>
-          <span class="art-caption">BUILD · SHIP · IMPROVE</span>
+          <span class="art-caption" data-i18n="artCaption">بساز · منتشر کن · بهتر کن</span>
         </div>
       </section>
 
@@ -202,14 +227,14 @@
         </div>
         <div class="about-card">
           <p data-i18n="aboutText">من Mohammad هستم؛ توسعه‌دهنده‌ی نرم‌افزار و سازنده‌ی پروژه‌هایی در زمینه‌ی زیرساخت ابری، اتوماسیون، ابزارهای توسعه، بات‌های Discord و اپلیکیشن‌های Android. این صفحه، مجموعه‌ی پروژه‌های عمومی و راه‌های ارتباط با من را در یک‌جا گرد آورده است.</p>
-          <div class="tech-list" aria-label="Technologies"><span class="tech">Python</span><span class="tech">Kotlin</span><span class="tech">TypeScript</span><span class="tech">JavaScript</span><span class="tech">HTML</span><span class="tech">PHP</span></div>
+          <div class="tech-list" id="technologyList" aria-label="فناوری‌ها"><span class="tech">Python</span><span class="tech">Kotlin</span><span class="tech">TypeScript</span><span class="tech">JavaScript</span><span class="tech">HTML</span><span class="tech">PHP</span></div>
         </div>
       </section>
 
       <section class="section" id="projects" aria-labelledby="projectsTitle">
         <div class="section-head">
           <div><h2 class="section-title" id="projectsTitle" data-i18n="projectsTitle">پروژه‌های عمومی</h2><p class="section-subtitle" data-i18n="projectsSub">همه‌ی مخزن‌های عمومی، با پیوند مستقیم به GitHub</p></div>
-          <span class="section-count" id="projectCount">۲۳ پروژه</span>
+          <span class="section-count" id="projectCount" aria-live="polite">۲۳ پروژه</span>
         </div>
         <div class="controls">
           <label class="search-wrap">
@@ -217,6 +242,7 @@
             <input class="search" id="projectSearch" type="search" autocomplete="off" data-i18n-placeholder="searchPlaceholder" placeholder="جست‌وجوی پروژه‌ها..." aria-label="Search projects">
           </label>
           <select class="language-filter" id="languageFilter" aria-label="Filter by language"></select>
+          <select class="sort-filter" id="sortFilter" aria-label="Sort projects"></select>
         </div>
         <div class="project-grid" id="projectGrid"></div>
         <div class="empty-state" id="emptyState" data-i18n="emptyState">پروژه‌ای با این جست‌وجو پیدا نشد.</div>
@@ -234,8 +260,9 @@
       </section>
     </main>
 
-    <footer><span><strong>Mohammad</strong> · <span data-i18n="footerText">نمونه‌کارها و پیوندهای رسمی</span></span><span class="ltr">© <span id="year">2026</span> · BUILT WITH CARE</span></footer>
+    <footer><span><strong>Mohammad</strong> · <span data-i18n="footerText">نمونه‌کارها و پیوندهای رسمی</span></span><span class="ltr">© <span id="year">2026</span> · <span data-i18n="builtWithCare">با دقت ساخته شده</span></span></footer>
   </div>
+  <a class="back-top" id="backTop" href="#top" aria-label="Back to top">↑</a>
 
   <script>
     const projects = [
@@ -266,48 +293,55 @@
 
     const text = {
       fa: {
-        navAbout:'درباره‌ی من', navProjects:'پروژه‌ها', navContact:'ارتباط', eyebrow:'نمونه‌کارها و پروژه‌های من', hello:'سلام، من', period:' هستم.',
+        navAbout:'درباره‌ی من', navProjects:'پروژه‌ها', navContact:'ارتباط', brandKicker:'توسعه‌دهنده‌ی نرم‌افزار', artCaption:'بساز · منتشر کن · بهتر کن', builtWithCare:'با دقت ساخته شده', eyebrow:'نمونه‌کارها و پروژه‌های من', hello:'سلام، من', period:' هستم.',
         heroText:'توسعه‌دهنده‌ی نرم‌افزار؛ سازنده‌ی پنل‌های VPN، بات‌های Discord، اپلیکیشن‌های Android و ابزارهای ابری و توسعه.',
         viewProjects:'دیدن پروژه‌ها', githubProfile:'پروفایل GitHub', publicProjects:'مخزن عمومی', languages:'زبان برنامه‌نویسی', siteLanguages:'دو زبانه',
         aboutTitle:'درباره‌ی من', aboutSub:'چند خط درباره‌ی کارهایی که می‌سازم',
         aboutText:'من Mohammad هستم؛ توسعه‌دهنده‌ی نرم‌افزار و سازنده‌ی پروژه‌هایی در زمینه‌ی زیرساخت ابری، اتوماسیون، ابزارهای توسعه، بات‌های Discord و اپلیکیشن‌های Android. این صفحه، مجموعه‌ی پروژه‌های عمومی و راه‌های ارتباط با من را در یک‌جا گرد آورده است.',
         projectsTitle:'پروژه‌های عمومی', projectsSub:'همه‌ی مخزن‌های عمومی، با پیوند مستقیم به GitHub', searchPlaceholder:'جست‌وجوی پروژه‌ها...', allLanguages:'همه‌ی زبان‌ها', emptyState:'پروژه‌ای با این جست‌وجو پیدا نشد.',
-        source:'مشاهده‌ی مخزن', demo:'دموی زنده', contactTitle:'در ارتباط باشیم', contactText:'برای گفت‌وگو، همکاری یا دیدن به‌روزرسانی‌ها از این مسیرها پیدایم کن.', footerText:'نمونه‌کارها و پیوندهای رسمی', projectCount:n=>`${n.toLocaleString('fa-IR')} پروژه`
+        source:'مشاهده‌ی مخزن', demo:'دموی زنده', sortRecommended:'پیشنهادی', sortStars:'بیشترین ستاره', sortAZ:'نام پروژه (A–Z)', starLabel:'ستاره', skipToContent:'رفتن به محتوای اصلی', backTop:'بازگشت به بالا', contactTitle:'در ارتباط باشیم', contactText:'برای گفت‌وگو، همکاری یا دیدن به‌روزرسانی‌ها از این مسیرها پیدایم کن.', footerText:'نمونه‌کارها و پیوندهای رسمی', projectCount:n=>`${n.toLocaleString('fa-IR')} پروژه`
       },
       en: {
-        navAbout:'About', navProjects:'Projects', navContact:'Contact', eyebrow:'Projects & selected work', hello:"Hi, I'm", period:'.',
+        navAbout:'About', navProjects:'Projects', navContact:'Contact', brandKicker:'SOFTWARE DEVELOPER', artCaption:'BUILD · SHIP · IMPROVE', builtWithCare:'BUILT WITH CARE', eyebrow:'Projects & selected work', hello:"Hi, I'm", period:'.',
         heroText:'Software developer building VPN panels, Discord bots, Android apps, and cloud and developer tools.',
         viewProjects:'Explore projects', githubProfile:'GitHub profile', publicProjects:'public repositories', languages:'core languages', siteLanguages:'bilingual',
         aboutTitle:'About me', aboutSub:'A short note about what I build',
         aboutText:"I'm Mohammad, a software developer building projects across cloud infrastructure, automation, developer tools, Discord bots and Android apps. This page brings my public projects and contact links together in one place.",
         projectsTitle:'Public projects', projectsSub:'All public repositories, linked directly to GitHub', searchPlaceholder:'Search projects...', allLanguages:'All languages', emptyState:'No projects match this search.',
-        source:'View repository', demo:'Live demo', contactTitle:"Let's connect", contactText:'Reach me here for a conversation, collaboration or updates.', footerText:'Portfolio & official links', projectCount:n=>`${n} projects`
+        source:'View repository', demo:'Live demo', sortRecommended:'Recommended', sortStars:'Most stars', sortAZ:'Name (A–Z)', starLabel:'stars', skipToContent:'Skip to main content', backTop:'Back to top', contactTitle:"Let's connect", contactText:'Reach me here for a conversation, collaboration or updates.', footerText:'Portfolio & official links', projectCount:n=>`${n} projects`
       }
     };
     let currentLang = 'fa';
     const grid = document.getElementById('projectGrid');
     const search = document.getElementById('projectSearch');
     const filter = document.getElementById('languageFilter');
+    const sortFilter = document.getElementById('sortFilter');
     const escapeHTML = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 
     function renderFilter() {
       const langs = [...new Set(projects.map(p => p.lang))].sort((a,b) => a.localeCompare(b));
       const previous = filter.value;
+      const previousSort = sortFilter.value || 'recommended';
       filter.innerHTML = `<option value="all">${text[currentLang].allLanguages}</option>` + langs.map(l => `<option value="${escapeHTML(l)}">${escapeHTML(l)}</option>`).join('');
+      sortFilter.innerHTML = `<option value="recommended">${text[currentLang].sortRecommended}</option><option value="stars">${text[currentLang].sortStars}</option><option value="az">${text[currentLang].sortAZ}</option>`;
       if (langs.includes(previous)) filter.value = previous;
+      if (['recommended','stars','az'].includes(previousSort)) sortFilter.value = previousSort;
     }
     function renderProjects() {
       const q = search.value.trim().toLocaleLowerCase();
       const selectedLang = filter.value || 'all';
-      const shown = projects.filter(p => {
+      let shown = projects.filter(p => {
         const haystack = [p.name,p.title.fa,p.title.en,p.desc.fa,p.desc.en,p.lang].join(' ').toLocaleLowerCase();
         return (selectedLang === 'all' || p.lang === selectedLang) && (!q || haystack.includes(q));
       });
+      const sortMode = sortFilter.value || 'recommended';
+      if (sortMode === 'stars') shown = [...shown].sort((a,b) => b.stars - a.stars || a.name.localeCompare(b.name));
+      if (sortMode === 'az') shown = [...shown].sort((a,b) => a.title[currentLang].localeCompare(b.title[currentLang]));
       grid.innerHTML = shown.map(p => `
         <article class="project-card">
           <div class="project-top">
             <div><h3 class="project-title">${escapeHTML(p.title[currentLang])}</h3><span class="project-repo">${escapeHTML(p.name)}</span></div>
-            <span class="language-pill">${escapeHTML(p.lang)}</span>
+            <div class="project-tags"><span class="language-pill">${escapeHTML(p.lang)}</span>${p.stars ? `<span class="project-stars" title="${p.stars} ${text[currentLang].starLabel}">★ ${p.stars}</span>` : ''}</div>
           </div>
           <p class="project-description">${escapeHTML(p.desc[currentLang])}</p>
           <div class="project-actions">
@@ -329,22 +363,34 @@
       document.getElementById('languageToggle').setAttribute('aria-label', currentLang === 'fa' ? 'Switch to English' : 'تغییر زبان به فارسی');
       document.getElementById('projectSearch').setAttribute('aria-label', currentLang === 'fa' ? 'جست‌وجوی پروژه‌ها' : 'Search projects');
       document.getElementById('languageFilter').setAttribute('aria-label', currentLang === 'fa' ? 'فیلتر بر اساس زبان' : 'Filter by language');
+      document.getElementById('sortFilter').setAttribute('aria-label', currentLang === 'fa' ? 'مرتب‌سازی پروژه‌ها' : 'Sort projects');
+      document.getElementById('mainNav').setAttribute('aria-label', currentLang === 'fa' ? 'پیمایش اصلی' : 'Main navigation');
+      document.getElementById('portfolioStats').setAttribute('aria-label', currentLang === 'fa' ? 'آمار نمونه‌کارها' : 'Portfolio statistics');
+      document.getElementById('technologyList').setAttribute('aria-label', currentLang === 'fa' ? 'فناوری‌ها' : 'Technologies');
+      document.getElementById('backTop').setAttribute('aria-label', t.backTop);
       renderFilter(); renderProjects();
     }
-    document.getElementById('languageToggle').addEventListener('click', () => { currentLang = currentLang === 'fa' ? 'en' : 'fa'; renderLanguage(); });
+    document.getElementById('languageToggle').addEventListener('click', () => {
+      currentLang = currentLang === 'fa' ? 'en' : 'fa';
+      try { localStorage.setItem('mohammad-portfolio-language', currentLang); } catch (_) {}
+      renderLanguage();
+    });
     search.addEventListener('input', renderProjects);
     filter.addEventListener('change', renderProjects);
+    sortFilter.addEventListener('change', renderProjects);
     document.getElementById('year').textContent = new Date().getFullYear();
+    try { const savedLanguage = localStorage.getItem('mohammad-portfolio-language'); if (savedLanguage === 'fa' || savedLanguage === 'en') currentLang = savedLanguage; } catch (_) {}
     renderLanguage();
+    const backTop = document.getElementById('backTop');
+    window.addEventListener('scroll', () => backTop.classList.toggle('visible', window.scrollY > 500), {passive:true});
 
-    // Discourage casual copying; public web content can still be extracted from source or screenshots.
-    document.addEventListener('copy', event => event.preventDefault());
-    document.addEventListener('cut', event => event.preventDefault());
-    document.addEventListener('selectstart', event => event.preventDefault());
-    document.addEventListener('contextmenu', event => event.preventDefault());
-    document.addEventListener('dragstart', event => event.preventDefault());
+    // Discourage casual copying while keeping search/filter controls usable.
+    const isEditable = target => target instanceof Element && !!target.closest('input, textarea, select, [contenteditable="true"]');
+    ['copy','cut','selectstart','contextmenu','dragstart'].forEach(type => {
+      document.addEventListener(type, event => { if (!isEditable(event.target)) event.preventDefault(); });
+    });
     document.addEventListener('keydown', event => {
-      if ((event.ctrlKey || event.metaKey) && ['c', 'x', 'a'].includes(event.key.toLowerCase())) event.preventDefault();
+      if (!isEditable(event.target) && (event.ctrlKey || event.metaKey) && ['c','x','a'].includes(event.key.toLowerCase())) event.preventDefault();
     });
   </script>
 </body>
