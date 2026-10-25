@@ -1,19 +1,17 @@
-# mohammad1390555.github.io
+# Mohammad — Personal Portfolio
 
-سایت شخصی **Panda Banger (ممد)** — پنل VPN روی Edge، بات دیسکورد و اپ اندروید.
+A lightweight, single-file bilingual Persian/English portfolio for GitHub Pages.
 
-## ساختار
-- `index.html` — تک‌فایل، بدون فریمورک، بدون بیلد. تم Neumorphism با CSS خالص.
-- همه‌ی ۱۸ پروژه با لینک مستقیم به مخزن گیت‌هاب + دموی زنده‌ی ابزارها.
-- فیلتر دسته‌بندی: Edge & VPN / اندروید / بات و AI / ابزار و وب / پنل و اینفرا.
-- فرم تماس: متن را کپی می‌کند و تلگرام را باز می‌کند (بدون بک‌اند).
+**Live site:** https://mohammad1390555.github.io/  
+**Public projects shown:** 23  
+**Languages:** Persian and English, with a language toggle.
 
-## دموهای زنده
-- فونت‌ساز: https://mohammad1390555.github.io/tool-fontgenerator/
-- رنگ‌سنج: https://mohammad1390555.github.io/tool-colorpicker/
+## Features
 
-## فونت‌ها
-- [Vazirmatn](https://fonts.googleapis.com/css2?family=Vazirmatn) (فارسی)
-- [JetBrains Mono](https://fonts.googleapis.com/css2?family=JetBrains+Mono) (مونو)
+- Responsive layout with a clean blue theme.
+- Search and programming-language filters for the public project list.
+- Links to GitHub repositories, verified demos, Telegram, Instagram, and X.
+- Client-side measures that discourage ordinary text copying.
+- No external fonts, scripts, images, or build dependencies.
 
-© Mohammad (Mamad) — BUILT ON THE EDGE
+The site is a static HTML page. Update `index.html` and commit to the `main` branch to publish changes through the existing GitHub Pages setup.
